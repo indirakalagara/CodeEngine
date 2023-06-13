@@ -11,6 +11,13 @@ app.use("/", router)
 router.get("/", (req,res) => {
 	res.send("hello world!")
 })
+
+router.post("/echo", (req, res) => {
+    // echo the message back to the user
+    res.json({ message: req && req.body && req.body.message || "nothing to echo back" });
+    res.end();
+});
+
 // start server
 app.listen(PORT, () => {
 	console.log("Server is up and running!!")
