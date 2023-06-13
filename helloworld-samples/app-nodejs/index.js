@@ -8,8 +8,22 @@ app.use(express.json())
 const router = express.Router()
 app.use("/", router)
 // get on root route 
+
+
+
 router.get("/", (req,res) => {
-	res.send("hello world!")
+	//res.send("hello world!")
+    const sevOneData={
+        "Indicator": "CarbonOutput",
+        "Timestamp": "1682958004000",
+        "dataCenter": "MSPWG-LON-EDGE-1",
+        "deviceId": "56503",
+        "emissionValue": "3.78625",
+        "location": "UK",
+        "value": "2.42708333333333"
+    }
+    res.json(sevOneData);
+    res.end();
 })
 
 router.post("/echo", (req, res) => {
